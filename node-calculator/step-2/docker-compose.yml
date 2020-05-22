@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 8080:80
+    networks: 
+      - add-sub_net
+      - mult-div_net
+
+  add-sub:
+    build:
+      context: ./add-sub/
+    networks: 
+      - add-sub_net
+
+  
+  mult-div:
+    build:
+      context: ./mult-div/
+    networks: 
+      - mult-div_net
+
+networks: 
+  add-sub_net:
+  mult-div_net:

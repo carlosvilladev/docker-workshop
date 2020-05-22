@@ -1,0 +1,13 @@
+version: '3'
+services:
+  add-sub:
+    build:
+      context: ./add-sub/
+    ports:
+      - 3000:3000
+  
+  mult-div:
+    build:
+      context: ./mult-div/
+    ports:
+      - 4000:4000
